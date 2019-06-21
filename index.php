@@ -1,18 +1,13 @@
 <?php 
 
 $method = $_SERVER['REQUEST_METHOD'];
-
-// Process only when method is POST
-if($method == 'POST'){
-	$requestBody = file_get_contents('php://input');
-	$json = json_decode($requestBody);
 $servername = "localhost";
 $username = "root";
-$password = "root";
-$dbname = "nightDuty";
+$password = "";
+$database = "nightDuty";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password,$dbname);
+$conn = new mysqli($servername, $username, $password,$database);
 
 // Check connection
 if ($conn->connect_error) {
@@ -31,7 +26,13 @@ if (mysqli_num_rows($result) > 0) {
  echo "0 results";
 }
 
-	$text = $json->result->parameters->designation;
+// Process only when method is POST
+if($method == 'POST'){
+	$requestBody = file_get_contents('php://input');
+	$json = json_decode($requestBody);
+
+
+	$text = $json->result->parameters->text;
 
 	switch ($text) {
 		case 'designation':
