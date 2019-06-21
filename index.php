@@ -10,7 +10,7 @@ if($method == 'POST'){
 
 
 	$text = $json->result->parameters->designation;
-	$servername = "localhost";
+	$servername = "localhost:8889";
 $username = "root";
 $password = "";
 $dbname = "nightDuty";
