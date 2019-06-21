@@ -46,7 +46,7 @@ else
 	echo "Method not allowed";
 }
 
-	$hostname = "quick-husky-64.localtunnel.me";
+	$hostname= "138.197.63.247";
 $username = "root";
 $password = "";
 $dbname = "test";
