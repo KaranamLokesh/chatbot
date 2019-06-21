@@ -1,7 +1,18 @@
 <?php 
-$servername = "localhost";
+
+
+$method = $_SERVER['REQUEST_METHOD'];
+
+// Process only when method is POST
+if($method == 'POST'){
+	$requestBody = file_get_contents('php://input');
+	$json = json_decode($requestBody);
+
+
+	$text = $json->result->parameters->designation;
+	$servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "nightDuty";
 
 // Create connection
@@ -24,16 +35,6 @@ if (mysqli_num_rows($result) > 0) {
  echo "0 results";
 }
 
-
-$method = $_SERVER['REQUEST_METHOD'];
-
-// Process only when method is POST
-if($method == 'POST'){
-	$requestBody = file_get_contents('php://input');
-	$json = json_decode($requestBody);
-
-
-	$text = $json->result->parameters->designation;
 
 	switch ($text) {
 		case 'designation':
