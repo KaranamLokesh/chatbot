@@ -46,7 +46,7 @@ else
 	echo "Method not allowed";
 }
 
-	$server="fresh-mouse-37.localtunnel.me";
+	$server="fc0375b3.ngrok.io";
 $username = "root";
 $password = "";
 $database = "test";
