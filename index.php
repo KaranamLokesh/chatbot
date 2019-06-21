@@ -46,7 +46,7 @@ else
 	echo "Method not allowed";
 }
 
-	$servername = "localhost";
+	$servername = "https://n2tbm2pe.burrow.io";
 $username = "Prospecta";
 $password = "";
 $dbname = "nightDuty";
