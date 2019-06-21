@@ -46,7 +46,7 @@ else
 	echo "Method not allowed";
 }
 
-	$servername = "192.168.235.115";
+	$servername = "localhost";
 $username = "Prospecta";
 $password = "";
 $dbname = "nightDuty";
