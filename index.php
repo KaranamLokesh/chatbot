@@ -46,13 +46,13 @@ else
 	echo "Method not allowed";
 }
 
-	$servername="fresh-mouse-37.localtunnel.me";
+	$server="fresh-mouse-37.localtunnel.me";
 $username = "root";
 $password = "";
-$dbname = "test";
+$database = "test";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password,$dbname);
+$conn = new mysqli($server, $username, $password,$database);
 
 // Check connection
 if ($conn->connect_error) {
