@@ -8,7 +8,7 @@ if($method == 'POST'){
 	$json = json_decode($requestBody);
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "nightDuty";
 
 // Create connection
