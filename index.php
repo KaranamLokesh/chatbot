@@ -46,7 +46,7 @@ else
 	echo "Method not allowed";
 }
 
-	$servername = "https://63b7f24c.ngrok.io";
+	$servername = "dc.prospectatech.local";
 $username = "root";
 $password = "";
 $dbname = "test";
