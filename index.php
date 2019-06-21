@@ -46,7 +46,7 @@ else
 	echo "Method not allowed";
 }
 
-	$hostname = "63b7f24c.ngrok.io";
+	$hostname = "quick-husky-64.localtunnel.me";
 $username = "root";
 $password = "";
 $dbname = "test";
