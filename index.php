@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
  echo "0 results";
 }
 
-	$text = $json->result->parameters->text;
+	$text = $json->result->parameters->designation;
 
 	switch ($text) {
 		case 'designation':
