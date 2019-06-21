@@ -46,13 +46,13 @@ else
 	echo "Method not allowed";
 }
 
-	$servername = "63b7f24c.ngrok.io";
+	$hostname = "63b7f24c.ngrok.io";
 $username = "root";
 $password = "";
 $dbname = "test";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password,$dbname);
+$conn = new mysqli($hostname, $username, $password,$dbname);
 
 // Check connection
 if ($conn->connect_error) {
