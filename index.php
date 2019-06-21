@@ -46,7 +46,7 @@ else
 	echo "Method not allowed";
 }
 
-	$servername= "nice-fireant-64.localtunnel.me";
+	$servername="fresh-mouse-37.localtunnel.me";
 $username = "root";
 $password = "";
 $dbname = "test";
