@@ -19,7 +19,7 @@ if($method == 'POST'){
 
 	switch ($text) {
 		case 'designation':
-			echo ($result);
+			$speech = $result;
 			break;
 
 		case 'bye':
