@@ -1,6 +1,4 @@
 <?php 
-
-$method = $_SERVER['REQUEST_METHOD'];
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -25,6 +23,9 @@ if (mysqli_num_rows($result) > 0) {
 } else {
  echo "0 results";
 }
+
+
+$method = $_SERVER['REQUEST_METHOD'];
 
 // Process only when method is POST
 if($method == 'POST'){
