@@ -46,10 +46,10 @@ else
 	echo "Method not allowed";
 }
 
-	$servername = "www.n2tbm2pe.burrow.io";
-$username = "Prospecta";
+	$servername = "https://63b7f24c.ngrok.io";
+$username = "root";
 $password = "";
-$dbname = "nightDuty";
+$dbname = "test";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
@@ -59,7 +59,7 @@ if ($conn->connect_error) {
     die( $conn->connect_error);
 } 
 echo "Connected successfully";
-$sql = "SELECT * from Timesheet";
+$sql = "SELECT * from mocktable";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
