@@ -3,7 +3,7 @@
 
 <?php
 include_once('conn.php');
-	$servername = "localhost";
+	$servername = "127.0.0.1";
 $username = "Prospecta";
 $password = "";
 $dbname = "nightDuty";
