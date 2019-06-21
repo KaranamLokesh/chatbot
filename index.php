@@ -9,10 +9,10 @@ if($method == 'POST'){
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "nightDuty";
+$dbname = "nightDuty";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password,$database);
+$conn = new mysqli($servername, $username, $password,$dbname);
 
 // Check connection
 if ($conn->connect_error) {
