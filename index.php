@@ -1,41 +1,65 @@
-<?php
+<?php 
 
 $method = $_SERVER['REQUEST_METHOD'];
 
 // Process only when method is POST
 if($method == 'POST'){
-    $requestBody = file_get_contents('php://input');
-    $json = json_decode($requestBody);
+	$requestBody = file_get_contents('php://input');
+	$json = json_decode($requestBody);
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "nightDuty";
 
-    $text = $json->queryResult->parameters->text;
+// Create connection
+$conn = new mysqli($servername, $username, $password,$database);
 
-    switch ($text) {
-        case 'hi':
-            $speech = "Hi, Nice to meet you";
-            break;
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+$sql = "SELECT * from Timesheet";
+$result = mysqli_query($conn, $sql);
 
-        case 'bye':
-            $speech = "Bye, good night";
-            break;
+if (mysqli_num_rows($result) > 0) {
+ // output data of each row
+ while($row = mysqli_fetch_assoc($result)) {
+ echo $result;
+ }
+} else {
+ echo "0 results";
+}
 
-        case 'anything':
-            $speech = "Yes, you can type anything here.";
-            break;
+	$text = $json->result->parameters->text;
 
-        default:
-            $speech = "Sorry, I didnt get that. Please ask me something else.";
-            break;
-    }
+	switch ($text) {
+		case 'designation':
+			echo ($result);
+			break;
 
-    $response = new \stdClass();
-    $response->speech = $speech;
-    $response->displayText = $speech;
-    $response->source = "webhook";
-    echo json_encode($response);
+		case 'bye':
+			$speech = "Bye, good night";
+			break;
+
+		case 'anything':
+			$speech = "Yes, you can type anything here.";
+			break;
+		
+		default:
+			$speech = "Sorry, I didnt get that. Please ask me something else.";
+			break;
+	}
+
+	$response = new \stdClass();
+	$response->speech = $speech;
+	$response->displayText = $speech;
+	$response->source = "webhook";
+	echo json_encode($response);
 }
 else
 {
-    echo "Method not allowed";
+	echo "Method not allowed";
 }
 
 ?>
