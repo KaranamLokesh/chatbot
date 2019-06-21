@@ -45,8 +45,8 @@ else
 ?>
 <?php
 	$servername = "localhost";
-$username = "root";
-$password = "root";
+$username = "Prospecta";
+$password = "";
 $dbname = "nightDuty";
 
 // Create connection
