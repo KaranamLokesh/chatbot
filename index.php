@@ -3,13 +3,16 @@
 
 
 <?php 
-$servername="31361229.ngrok.io/";
-$username = "root";
-$password = "";
-$database = "test";
+
+define('DBUSER', 'root');
+define('DBPASS', '');
+define('DBSERVER', '31361229.ngrok.io/');
+define('DBNAME', 'test');
+
+$conn = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
 
 // Create connection
-$conn = new mysqli($servername, $username, $password,$database);
+
 
 // Check connection
 if ($conn->connect_error) {
