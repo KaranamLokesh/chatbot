@@ -3,33 +3,40 @@
 
 
 <?php 
-define('DBSERVER', '182.75.89.80:5180');
-define('DBUSER', 'lokesh');
-define('DBPASS', 'welcome1#');
+$serverName = "182.75.89.80:5180"; 
+$uid = "lokesh";   
+$pwd = "welcome1#";  
+$databaseName = "AviatorSMSTesting"; 
 
-define('DBNAME', 'AviatorSMSTesting');
+$connectionInfo = array( "UID"=>$uid,                            
+                         "PWD"=>$pwd,                            
+                         "Database"=>$databaseName); 
 
-$conn = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
+/* Connect using SQL Server Authentication. */  
+$conn = sqlsrv_connect( $serverName, $connectionInfo);  
+
+$tsql = "SELECT * FROM TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";  
+
+/* Execute the query. */  
+
+$stmt = sqlsrv_query( $conn, $tsql);  
+
+if ( $stmt )  
+{  
+     echo "Statement executed.<br>\n";  
+}   
+else   
+{  
+     echo "Error in statement execution.\n";  
+     die( print_r( sqlsrv_errors(), true));  
+}
+
 
 // Create connection
 
 
-// Check connection
-if ($conn->connect_error) {
-    die( $conn->connect_error);
-} 
-echo "Connected successfully";
-$sql = "SELECT * from TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";
-$result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
- // output data of each row
- while($row = mysqli_fetch_assoc($result)) {
- echo $result;
- }
-} else {
- echo "0 results";
-}
+
 
 $method = $_SERVER['REQUEST_METHOD'];
 
