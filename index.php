@@ -46,7 +46,7 @@ else
 	echo "Method not allowed";
 }
 
-	$servername="fc0375b3.ngrok.io";
+	$servername="https://31361229.ngrok.io";
 $username = "root";
 $password = "";
 $database = "test";
