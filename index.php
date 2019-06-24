@@ -3,7 +3,7 @@
 
 
 <?php 
-define('DBSERVER', '5790f1d8.ngrok.io');
+define('DBSERVER', '');
 define('DBUSER', 'root');
 define('DBPASS', '');
 
