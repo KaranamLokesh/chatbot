@@ -3,10 +3,10 @@
 
 
 <?php 
-
+define('DBSERVER', '5790f1d8.ngrok.io');
 define('DBUSER', 'root');
 define('DBPASS', '');
-define('DBSERVER', '5790f1d8.ngrok.io');
+
 define('DBNAME', 'test');
 
 $conn = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
