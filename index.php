@@ -46,7 +46,7 @@ else
 	echo "Method not allowed";
 }
 
-	$servername="https://31361229.ngrok.io/phpmyadmin/";
+	$servername="31361229.ngrok.io/";
 $username = "root";
 $password = "";
 $database = "test";
