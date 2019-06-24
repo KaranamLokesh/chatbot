@@ -6,7 +6,7 @@
 
 define('DBUSER', 'root');
 define('DBPASS', '');
-define('DBSERVER', 'terrible-wasp-40.localtunnel.me');
+define('DBSERVER', '5790f1d8.ngrok.io');
 define('DBNAME', 'test');
 
 $conn = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
