@@ -3,7 +3,7 @@
 
 
 <?php 
-$serverName = "182.75.89.80:5180"; 
+$serverName = "ADC,5180"; 
 $uid = "lokesh";   
 $pwd = "welcome1#";  
 $databaseName = "AviatorSMSTesting"; 
