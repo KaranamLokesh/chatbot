@@ -3,11 +3,11 @@
 
 
 <?php 
-define('DBSERVER', '');
-define('DBUSER', 'root');
-define('DBPASS', '');
+define('DBSERVER', '182.75.89.80:5180');
+define('DBUSER', 'lokesh');
+define('DBPASS', 'welcome1#');
 
-define('DBNAME', 'test');
+define('DBNAME', 'AviatorSMSTesting');
 
 $conn = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
 
@@ -19,7 +19,7 @@ if ($conn->connect_error) {
     die( $conn->connect_error);
 } 
 echo "Connected successfully";
-$sql = "SELECT * from mocktable";
+$sql = "SELECT * from TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
