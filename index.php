@@ -21,7 +21,7 @@ if($method == 'POST'){
 
 	$text = $json->result->parameters->designation;
 
-$serverName = "ADC,5180"; 
+$serverName = "182.75.89.80"; 
 $uid = "lokesh";   
 $pwd = "welcome1#";  
 $databaseName = "AviatorSMSTesting"; 
