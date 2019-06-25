@@ -19,16 +19,8 @@ $tsql = "SELECT * FROM mocktable";
 
 $stmt = mysqli_query( $conn,$tsql);
 $row=mysqli_fetch_row($tsql);
-if ($stmt) {
 
-  
-
-     echo "Statement executed.<br>\n";
-
-}
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+ 
 switch ($text) {
 
     case 'designation':
