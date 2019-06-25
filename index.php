@@ -8,14 +8,14 @@ $requestBody = file_get_contents('php://input');
 
 
   $text = $json->queryResult->parameters->designation;
-$servername = "182.75.89.80";
-$username = "lokesh";
-$password = "welcome1#";
-$database = "AviatorSMSTesting";
+$servername = "";
+$username = "root";
+$password = "";
+$database = "test";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$database);
-$tsql = "Select * from TRANS_ADP_ADP_FORM";  
+$tsql = "SELECT * FROM mocktable";  
 
 $stmt = mysqli_query( $conn,$tsql);
 if ($stmt) {
@@ -29,6 +29,7 @@ if ($stmt) {
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
+echo "Connected successfully";
 switch ($text) {
 
     case 'designation':
@@ -71,11 +72,6 @@ switch ($text) {
 
 
   echo json_encode($response);
-}
-else
-{
-    echo "Method not allowed";
-}
 
 
 ?>
