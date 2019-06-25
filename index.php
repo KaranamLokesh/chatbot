@@ -28,7 +28,7 @@ switch ($text) {
     case 'designation':
 
 
-      $speech = $row;
+      $speech = $row[0];
 
 
       break;
