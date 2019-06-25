@@ -8,14 +8,14 @@ $requestBody = file_get_contents('php://input');
 
 
   $text = $json->queryResult->parameters->designation;
-$servername = "";
-$username = "root";
-$password = "";
-$database = "test";
+$servername = "182.75.89.80";
+$username = "lokesh";
+$password = "welcome1#";
+$database = "AviatorSMSTesting";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$database);
-$tsql = "SELECT * FROM mocktable";  
+$tsql = "Select * from TRANS_ADP_ADP_FORM";  
 
 $stmt = mysqli_query( $conn,$tsql);
 if ($stmt) {
