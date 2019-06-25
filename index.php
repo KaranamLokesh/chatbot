@@ -19,24 +19,12 @@ $tsql = "SELECT * FROM mocktable";
 
 $stmt = mysqli_query( $conn,$tsql);
 $row=mysqli_fetch_array($stmt,MYSQLI_NUM);
-if ($stmt) {
-
-  
-
-     echo "Statement executed.<br>\n";
-
-} 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
 switch ($text) {
 
     case 'designation':
 
 
-      $speech = $row[0];
+      $speech = $row;
 
 
       break;
@@ -61,6 +49,12 @@ switch ($text) {
 
 
   }
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+
 
 
   $response = new \stdClass();
