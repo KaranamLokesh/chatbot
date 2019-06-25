@@ -21,35 +21,19 @@ if($method == 'POST'){
 
 	$text = $json->result->parameters->designation;
 
-$serverName = "182.75.89.80,5180"; 
-$uid = "lokesh";   
-$pwd = "welcome1#";  
-$databaseName = "AviatorSMSTesting"; 
 
-$connectionInfo = array( "UID"=>$uid,                            
-                         "PWD"=>$pwd,                            
-                         "Database"=>$databaseName); 
+$servername = "ancient-earwig-11.localtunnel.me";
+$username = "root";
+$password = "";
 
-/* Connect using SQL Server Authentication. */  
-$conn = sqlsrv_connect( $serverName, $connectionInfo);
+// Create connection
+$conn = new mysqli($servername, $username, $password);
 
-
-$tsql = "SELECT * FROM TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";  
-
-/* Execute the query. */  
-
-$stmt = sqlsrv_query( $conn,$tsql);  
-
-if ( $stmt )  
-{  
-     echo "Statement executed.<br>\n";  
-
-}   
-else   
-{  
-     echo "Error in statement execution.\n";  
-     die( print_r( sqlsrv_errors(), true));  
-}
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
 
 
 	switch ($text) {
