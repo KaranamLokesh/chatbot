@@ -71,6 +71,11 @@ switch ($text) {
 
 
   echo json_encode($response);
+}
+else
+{
+    echo "Method not allowed";
+}
 
 
 ?>
