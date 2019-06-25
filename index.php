@@ -23,7 +23,7 @@ switch ($text) {
 
 		case 'designation':
 
-			$fulfillmentMessages->text->text = "hello";
+			$speech = "hello";
 			
 
 			break;
@@ -67,9 +67,9 @@ switch ($text) {
 
 	$response = new \stdClass();
 
-	$response->speech = $fulfillmentMessages->text->text;
+	$response->fulfillmentMessages->text->text = $speech;
 
-	$response->displayText = $fulfillmentMessages->text->text;
+	$response->fulfillmentMessages->text->text = $speech;
 
 	$response->source = "webhook";
 
