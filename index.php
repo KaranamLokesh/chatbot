@@ -1,28 +1,22 @@
 
 
 
-
-<?php 
-
-
-// Create connection
+<?php
 
 
 
+	$requestBody = file_get_contents('file.txt');
 
-
-$method = $_SERVER['REQUEST_METHOD'];
-
-// Process only when method is POST
-if($method == 'POST'){
-	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
+
+
+
 
 
 	$text = $json->queryResult->parameters->designation;
 
 
-$serverName = "182.75.89.80,5180"; 
+$serverName = "182.75.89.80,5180\\sqlexpress"; 
 
 $uid = "lokesh";   
 
@@ -48,7 +42,7 @@ $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 
 
-$tsql = "SELECT * FROM TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";  
+$tsql = "SELECT smallint_205_ME FROM TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";  
 
 
 
@@ -57,65 +51,83 @@ $tsql = "SELECT * FROM TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";
 
 
 $stmt = sqlsrv_query( $conn,$tsql); 
+if ($stmt) {
 
+ 
+	while($row = sqlsrv_fetch_array($stmt)) {
+        echo $row["smallint_205_ME"];
 
+    }
 
-
-if ( $stmt )  
-
-{  
 
      echo "Statement executed.<br>\n";
-     echo $stmt;  
+     
 
 
 
-}   
-
-else   
-
-{  
-
-     echo "Error in statement execution.\n";  
-
-     die( print_r( sqlsrv_errors(), true));  
-
-}
+} 
 
 
 
+switch ($text) {
 
-
-
-	switch ($text) {
 		case 'designation':
+
 			$speech = "hello";
+			
+
 			break;
+
+
 
 		case 'bye':
+
 			$speech = "Bye, good night";
+
 			break;
+
+
 
 		case 'anything':
+
 			$speech = "Yes, you can type anything here.";
+
 			break;
+
 		
+
 		default:
+
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
+
 			break;
+
 	}
-	
+
+
+  
+
+
+
+
+
+
+
+
 
 	$response = new \stdClass();
-	$response->speech = $speech;
-	$response->displayText = $speech;
-	$response->source = "webhook";
-	echo json_encode($response);
-}
-else
-{
-	echo "Method not allowed";
-}
 
-	
+	$response->speech = $speech;
+
+	$response->displayText = $speech;
+
+	$response->source = "webhook";
+
+	echo json_encode($response);
+
+
+
+
+
+
 ?>
