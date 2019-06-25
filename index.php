@@ -19,7 +19,7 @@ if($method == 'POST'){
 	$json = json_decode($requestBody);
 
 
-	$text = $json->result->parameters->designation;
+	$text = $json->queryResult->parameters->designation;
 
 
 $servername = "ancient-earwig-11.localtunnel.me";
