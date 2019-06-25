@@ -18,9 +18,11 @@ $conn = mysqli_connect($servername, $username, $password,$database);
 $tsql = "SELECT * FROM mocktable";  
 $result = mysqli_query($conn, $tsql);
     $resultCheck = mysqli_num_rows($result);
+    
     if ($resultCheck > 0) {
+      $array = array();
        while ($row = mysqli_fetch_assoc($result)) {
-            $person = $row;
+            $array[] = $row;
        }
 
 
@@ -31,7 +33,7 @@ switch ($text) {
     case 'designation':
 
 
-      $speech = $person;
+      $speech = $array;
 
 
       break;
