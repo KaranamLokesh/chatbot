@@ -22,17 +22,67 @@ if($method == 'POST'){
 	$text = $json->queryResult->parameters->designation;
 
 
-$servername = "ancient-earwig-11.localtunnel.me";
-$username = "root";
-$password = "";
-$database="test";
+$serverName = "182.75.89.80,5180"; 
 
-// Create connection
-$conn = new mysqli($servername, $username, $password,$database);
+$uid = "lokesh";   
 
-	$sql = "SELECT * FROM test";
-$result = $conn->query($sql);
-	
+$pwd = "welcome1#";  
+
+$databaseName = "AviatorSMSTesting"; 
+
+
+
+$connectionInfo = array( "UID"=>$uid,                            
+
+                         "PWD"=>$pwd,                            
+
+                         "Database"=>$databaseName); 
+
+
+
+/* Connect using SQL Server Authentication. */  
+
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
+
+
+
+
+
+$tsql = "SELECT * FROM TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";  
+
+
+
+/* Execute the query. */  
+
+
+
+$stmt = sqlsrv_query( $conn,$tsql); 
+
+
+
+
+if ( $stmt )  
+
+{  
+
+     echo "Statement executed.<br>\n";
+     echo $stmt;  
+
+
+
+}   
+
+else   
+
+{  
+
+     echo "Error in statement execution.\n";  
+
+     die( print_r( sqlsrv_errors(), true));  
+
+}
+
+
 
 
 
@@ -54,7 +104,7 @@ $result = $conn->query($sql);
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
-	$conn->close();
+	
 
 	$response = new \stdClass();
 	$response->speech = $speech;
