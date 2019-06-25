@@ -17,8 +17,9 @@ $database = "test";
 $conn = mysqli_connect($servername, $username, $password,$database);
 $tsql = "SELECT * FROM mocktable";  
 
+$stmt = mysqli_query( $conn,$tsql);
+$row=mysqli_fetch_row($stmt);
 
-$row=mysqli_fetch_row($conn,$tsql);
 
  
 switch ($text) {
