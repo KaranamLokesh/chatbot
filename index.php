@@ -16,6 +16,56 @@
 	$text = $json->queryResult->parameters->designation;
 
 
+$serverName = "182.75.89.80,5180\\sqlexpress"; 
+
+$uid = "lokesh";   
+
+$pwd = "welcome1#";  
+
+$databaseName = "AviatorSMSTesting"; 
+
+
+
+$connectionInfo = array( "UID"=>$uid,                            
+
+                         "PWD"=>$pwd,                            
+
+                         "Database"=>$databaseName); 
+
+
+
+/* Connect using SQL Server Authentication. */  
+
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
+
+
+
+
+
+$tsql = "SELECT smallint_205_ME FROM TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";  
+
+
+
+/* Execute the query. */  
+
+
+
+$stmt = sqlsrv_query( $conn,$tsql); 
+if ($stmt) {
+
+ 
+	while($row = sqlsrv_fetch_array($stmt)) {
+        echo $row["smallint_205_ME"];
+
+    }
+
+
+     echo "Statement executed.<br>\n";
+     
+
+
+
+} 
 
 
 
