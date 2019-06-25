@@ -5,7 +5,7 @@
 
 
 
-	$requestBody = file_get_contents('file.txt');
+	$requestBody = file_get_contents('php://input');
 
 	$json = json_decode($requestBody);
 
