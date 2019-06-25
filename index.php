@@ -16,7 +16,7 @@
 	$text = $json->queryResult->parameters->designation;
 
 
-$serverName = "182.75.89.80,5180\\sqlexpress"; 
+$serverName = "ADC,5180\\sqlexpress"; 
 
 $uid = "lokesh";   
 
