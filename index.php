@@ -39,7 +39,7 @@ $result = $conn->query($sql);
 
 	switch ($text) {
 		case 'designation':
-			$speech = $result;
+			$speech = "hello";
 			break;
 
 		case 'bye':
