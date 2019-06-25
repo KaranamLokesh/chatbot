@@ -8,7 +8,7 @@ $requestBody = file_get_contents('php://input');
 
 
   $text = $json->queryResult->parameters->designation;
-$servername = "";
+$servername = "wicked-sloth-29.localtunnel.me";
 $username = "root";
 $password = "";
 $database = "test";
