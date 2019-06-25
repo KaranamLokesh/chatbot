@@ -3,7 +3,7 @@
 
 
 <?php 
-$serverName = "ADC,5180"; 
+$serverName = "182.75.89.80,5180"; 
 $uid = "lokesh";   
 $pwd = "welcome1#";  
 $databaseName = "AviatorSMSTesting"; 
@@ -13,17 +13,19 @@ $connectionInfo = array( "UID"=>$uid,
                          "Database"=>$databaseName); 
 
 /* Connect using SQL Server Authentication. */  
-$conn = sqlsrv_connect( $serverName, $connectionInfo);  
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
+
 
 $tsql = "SELECT * FROM TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";  
 
 /* Execute the query. */  
 
-$stmt = sqlsrv_query( $conn, $tsql);  
+$stmt = sqlsrv_query( $conn,$tsql);  
 
 if ( $stmt )  
 {  
      echo "Statement executed.<br>\n";  
+
 }   
 else   
 {  
