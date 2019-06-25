@@ -1,6 +1,4 @@
 <?php
-$method = $_SERVER['REQUEST_METHOD'];
-if($method == 'POST'){
 $requestBody = file_get_contents('php://input');
 
   $json = json_decode($requestBody);
@@ -18,9 +16,14 @@ $database = "test";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$database);
 $tsql = "SELECT * FROM mocktable";  
+$result = mysqli_query($conn, $tsql);
+    $resultCheck = mysqli_num_rows($result);
+    if ($resultCheck > 0) {
+       while ($row = mysqli_fetch_assoc($result)) {
+            $person = $row;
+       }
 
-$stmt = mysqli_query( $conn,$tsql);
-$row=mysqli_fetch_row($stmt);
+
 
  
 switch ($text) {
@@ -28,7 +31,7 @@ switch ($text) {
     case 'designation':
 
 
-      $speech = $row[0];
+      $speech = $person;
 
 
       break;
@@ -51,7 +54,7 @@ switch ($text) {
 
       break;
 
-
+}
   }
 // Check connection
 
@@ -66,10 +69,9 @@ switch ($text) {
   $response->displayText = $speech;
 
   $response->source = "webhook";
-
+  
 
   echo json_encode($response);
-}
 
 
 ?>
