@@ -22,7 +22,7 @@ if($method == 'POST'){
 	$text = $json->queryResult->parameters->designation;
 
 
-$serverName = "182.75.89.80,5180\\sqlexpress"; 
+$serverName = "182.75.89.80,5180"; 
 
 $uid = "lokesh";   
 
