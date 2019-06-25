@@ -23,7 +23,7 @@ switch ($text) {
 
 		case 'designation':
 
-			$speech = "hello";
+			$fulfillmentText = "hello";
 			
 
 			break;
