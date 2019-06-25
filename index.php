@@ -23,7 +23,7 @@ switch ($text) {
 
 		case 'designation':
 
-			$fulfillmentText = "hello";
+			$fulfillmentMessages->text->text = "hello";
 			
 
 			break;
