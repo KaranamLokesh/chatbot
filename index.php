@@ -20,7 +20,6 @@ $tsql = "SELECT * FROM mocktable";
 $stmt = mysqli_query( $conn,$tsql);
 $row=mysqli_fetch_row($stmt);
 
-
  
 switch ($text) {
 
