@@ -67,9 +67,9 @@ switch ($text) {
 
 	$response = new \stdClass();
 
-	$response->speech = $speech;
+	$response->speech = $fulfillmentMessages->text->text;
 
-	$response->displayText = $speech;
+	$response->displayText = $fulfillmentMessages->text->text;
 
 	$response->source = "webhook";
 
