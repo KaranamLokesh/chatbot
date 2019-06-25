@@ -25,20 +25,20 @@ if($method == 'POST'){
 $servername = "ancient-earwig-11.localtunnel.me";
 $username = "root";
 $password = "";
+$database="test";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password,$database);
+	$sql = "SELECT * FROM test";
+$result = $conn->query($sql);
+	$conn->close();
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
+
 
 
 	switch ($text) {
 		case 'designation':
-			$speech = "got it!";
+			$speech = $result;
 			break;
 
 		case 'bye':
