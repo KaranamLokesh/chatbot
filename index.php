@@ -3,7 +3,7 @@
 
 <?php
 
-
+	include('https://chatterbot12.herokuapp.com?result=$result');
 
 	$requestBody = file_get_contents('php://input');
 
@@ -31,7 +31,7 @@ switch ($text) {
 
 		case 'designation':
 
-			$speech = $;
+			$speech = result;
 			
 
 			break;
