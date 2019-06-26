@@ -27,7 +27,7 @@ $queryText = $json->queryResult->queryText;
 
 /* Execute the query. */  
 
-switch (true) {
+switch ($text) {
 
 		case 'designation':
 
