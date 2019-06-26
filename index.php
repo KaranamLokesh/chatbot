@@ -25,7 +25,7 @@ $queryText = $json->queryResult->queryText;
 
 /* Execute the query. */  
 
-switch (false) {
+switch (true) {
 
 		case stripos('$queryText','$text'):
 
