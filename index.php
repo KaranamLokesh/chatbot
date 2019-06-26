@@ -27,9 +27,9 @@ $queryText = $json->queryResult->queryText;
 
 /* Execute the query. */  
 
-switch ($text) {
+switch (true) {
 
-		case 'designation':
+		case strpos('queryText','$text'):
 
 			$speech = $variable;
 			
