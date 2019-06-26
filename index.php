@@ -4,7 +4,7 @@
 <?php
 
 include('portal2.prospectatech.com/check.php');
-$variable = $this->array;
+$variable = $this->database;
 	
 	$requestBody = file_get_contents('php://input');
 
