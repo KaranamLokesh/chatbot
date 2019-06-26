@@ -74,7 +74,7 @@ switch ($text) {
 
 	$response = new \stdClass();
 
-	$response->text = $speech;
+	$response->speech = $speech;
 
 	$response->displayText = $speech;
 
