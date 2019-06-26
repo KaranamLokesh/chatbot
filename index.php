@@ -27,9 +27,9 @@ $queryText = $json->queryResult->queryText;
 
 /* Execute the query. */  
 
-switch ($text) {
+switch (true) {
 
-		case ('$text exist $queryText'):
+		case 'strpos('$queryText, $text')':
 
 			$speech = $variable;
 			
