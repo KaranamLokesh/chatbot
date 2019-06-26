@@ -2,6 +2,7 @@
 
 
 <?php
+$variable = 23
 
 	
 	$requestBody = file_get_contents('php://input');
@@ -30,7 +31,7 @@ switch ($text) {
 
 		case 'designation':
 
-			$speech = result;
+			$speech = $variable;
 			
 
 			break;
