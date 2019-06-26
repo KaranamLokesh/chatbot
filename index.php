@@ -28,7 +28,7 @@ $variable = $result;
 
 switch ($text) {
 
-		case if($text exist 'designation'):
+		case 'if($text exist 'designation')':
 
 			$speech = $variable;
 			
