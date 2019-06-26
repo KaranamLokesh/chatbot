@@ -1,6 +1,4 @@
 
-
-
 <?php
 
 // From URL to get webpage contents. 
@@ -32,11 +30,8 @@ switch (true) {
 		case stripos('$queryText','$text'):
 
 			$speech = $variable;
-			
-
+		
 			break;
-
-
 
 		case 'bye':
 
@@ -44,34 +39,18 @@ switch (true) {
 
 			break;
 
-
-
 		case 'anything':
 
 			$speech = "Yes, you can type anything here.";
 
 			break;
 
-		
-
 		default:
 
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 
 			break;
-
 	}
-
-
-  
-
-
-
-
-
-
-
-
 
 	$response = new \stdClass();
 
@@ -82,10 +61,5 @@ switch (true) {
 	$response->source = "webhook";
 
 	echo json_encode($response);
-
-
-
-
-
 
 ?>
