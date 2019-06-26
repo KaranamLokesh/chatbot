@@ -8,7 +8,7 @@ $requestBody = file_get_contents('php://input');
 
 
   $text = $json->queryResult->parameters->designation;
-$servername = "65bb3802.ngrok.io";
+$servername = "";
 $username = "root";
 $password = "";
 $database = "test";
