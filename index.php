@@ -1,79 +1,133 @@
+
+
+
 <?php
-$requestBody = file_get_contents('php://input');
-
-  $json = json_decode($requestBody);
 
 
 
+	$requestBody = file_get_contents('php://input');
+
+	$json = json_decode($requestBody);
 
 
-  $text = $json->queryResult->parameters->designation;
-$servername = "";
-$username = "root";
-$password = "";
-$database = "test";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password,$database);
-$tsql = "SELECT * FROM mocktable";  
-$result = mysqli_query($conn, $tsql);
-    $resultCheck = mysqli_num_rows($result);
-    
-    if ($resultCheck > 0) {
-      $array = array();
-       while ($row = mysqli_fetch_assoc($result)) {
-            $array[] = $row;
-       }
 
 
+
+	$text = $json->queryResult->parameters->designation;
+
+
+$serverName = "182.75.89.80,5180"; 
+
+$uid = "lokesh";   
+
+$pwd = "welcome1#";  
+
+$databaseName = "AviatorSMSTesting"; 
+
+
+
+$connectionInfo = array( "UID"=>$uid,                            
+
+                         "PWD"=>$pwd,                            
+
+                         "Database"=>$databaseName); 
+
+
+
+/* Connect using SQL Server Authentication. */  
+
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
+
+
+
+
+
+$tsql = "SELECT smallint_205_ME FROM TRANS_INCIDENT_INCIDENT_IDENTIFICATIONS";  
+
+
+
+/* Execute the query. */  
+
+
+
+$stmt = sqlsrv_query( $conn,$tsql); 
+if ($stmt) {
 
  
+	while($row = sqlsrv_fetch_array($stmt)) {
+        echo $row["smallint_205_ME"];
+
+    }
+
+
+     echo "Statement executed.<br>\n";
+     
+
+
+
+} 
+
+
+
 switch ($text) {
 
-    case 'designation':
+		case 'designation':
 
+			$speech = "hello";
+			
 
-      $speech = $array;
-
-
-      break;
-
-    case 'bye':
-
-      $speech = "Bye, good night";
-
-      break;
-
-    case 'anything':
-
-      $speech = "Yes, you can type anything here.";
-
-      break;
-
-    default:
-
-      $speech = "Sorry, I didnt get that. Please ask me something else.";
-
-      break;
-
-}
-  }
-// Check connection
+			break;
 
 
 
+		case 'bye':
+
+			$speech = "Bye, good night";
+
+			break;
 
 
-  $response = new \stdClass();
 
-  $response->speech = $speech;
+		case 'anything':
 
-  $response->displayText = $speech;
+			$speech = "Yes, you can type anything here.";
 
-  $response->source = "webhook";
+			break;
+
+		
+
+		default:
+
+			$speech = "Sorry, I didnt get that. Please ask me something else.";
+
+			break;
+
+	}
+
+
   
 
-  echo json_encode($response);
+
+
+
+
+
+
+
+
+	$response = new \stdClass();
+
+	$response->speech = $speech;
+
+	$response->displayText = $speech;
+
+	$response->source = "webhook";
+
+	echo json_encode($response);
+
+
+
+
 
 
 ?>
