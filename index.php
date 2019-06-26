@@ -27,7 +27,7 @@ $queryText = $json->queryResult->queryText;
 
 switch (false) {
 
-		case strpos('$queryText','$text'):
+		case stripos('$queryText','$text'):
 
 			$speech = $variable;
 		
