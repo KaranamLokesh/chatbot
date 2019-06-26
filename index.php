@@ -3,8 +3,20 @@
 
 <?php
 
-include('portal2.prospectatech.com/check.php');
-$variable = $database;
+// From URL to get webpage contents. 
+$url = "portal2.prospectatech.com/check.php"; 
+  
+// Initialize a CURL session. 
+$ch = curl_init();  
+  
+// Return Page contents. 
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+  
+//grab URL and pass it to the variable. 
+curl_setopt($ch, CURLOPT_URL, $url); 
+  
+$result = curl_exec($ch);
+$variable = $result;
 	
 	$requestBody = file_get_contents('php://input');
 
