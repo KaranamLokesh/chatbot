@@ -23,12 +23,13 @@ $variable = $result;
 	$json = json_decode($requestBody);
 
 	$text = $json->queryResult->parameters->text;
+$queryText = $json->queryResult->queryText;
 
 /* Execute the query. */  
 
 switch ($text) {
 
-		case 'if($text exist 'designation')':
+		case ('$text exist $queryText'):
 
 			$speech = $variable;
 			
