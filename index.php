@@ -12,7 +12,7 @@
 
 
 
-	$text = $json->queryResult->parameters->designation;
+	$text = $json->queryResult->parameters->text;
 
 
 
