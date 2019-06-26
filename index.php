@@ -2,30 +2,16 @@
 
 
 <?php
-$variable = 23
+$variable = 23;
 
 	
 	$requestBody = file_get_contents('php://input');
 
 	$json = json_decode($requestBody);
 
-
-
-
-
 	$text = $json->queryResult->parameters->text;
 
-
-
-
-
 /* Execute the query. */  
-
-
-
-
-
-
 
 switch ($text) {
 
