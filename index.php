@@ -35,7 +35,9 @@ switch (true) {
 
 		case 'bye':
 
-			$speech = "Bye, good night";
+			$speech = <speak>
+  my SSML content
+</speak>;
 
 			break;
 
