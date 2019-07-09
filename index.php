@@ -2,7 +2,7 @@
 <?php
 
 // From URL to get webpage contents. 
-$url = "portal2.prospectatech.com/check.php"; 
+$url = "portal2.prospectatech.com/mobnum.php?name=diwakar"; 
   
 // Initialize a CURL session. 
 $ch = curl_init();  
@@ -19,15 +19,25 @@ $variable = $result;
 	$requestBody = file_get_contents('php://input');
 
 	$json = json_decode($requestBody);
-
-	$text = $json->queryResult->parameters->text;
-$queryText = $json->queryResult->queryText;
+  //$period = "-period";
+  $perd = 'date-period';
+  $perdtime = 'date-time';
+  $name='given-name';
+  $text = $json->queryResult->parameters->text;
+  $queryText=$json->queryResult->queryText;
+  $endDate=$json->queryResult->parameters->$perd->endDate;
+  $startDate=$json->queryResult->parameters->$perd->startDate;
+  $endDatetime=$json->queryResult->parameters->$perdtime->endDate;
+  $startDatetime=$json->queryResult->parameters->$perdtime->startDate;
+  $date = $json->queryResult->parameters->$perdtime;
+  $outputaudio=$json->outputAudio;
+  $givenname=$json->queryResult->parameters->$name;
 
 /* Execute the query. */  
 
-switch (true) {
+switch ($date) {
 
-		case stripos('$queryText','$text'):
+		case 'diwakar':
 
 			$speech = $variable;
 		
