@@ -20,9 +20,10 @@
   $outputaudio=$json->outputAudio;
   $givenname=$json->queryResult->parameters->$name;
 $email=array("mail id","email");
-if(array_in($text, array('contact','mobile number','display mobile number'))
+$mobile=array('contact','mobile number','display mobile number');
+if(in_array($text,$mobile)
 	$url = "portal2.prospectatech.com/mobnum.php?name=$givenname";
-if(array_in($text,$email))
+if(in_array($text,$email))
 	$url = "portal2.prospectatech.com/email.php?name=$givenname";
   
 // Initialize a CURL session. 
