@@ -43,23 +43,10 @@ switch ($date) {
 		
 			break;
 
-		case 'bye':
-
-			$speech = <speak>
-  my SSML content
-</speak>;
-
-			break;
-
-		case 'anything':
-
-			$speech = "Yes, you can type anything here.";
-
-			break;
 
 		default:
 
-			$speech = "Sorry, I didnt get that. Please ask me something else.";
+			$speech=$variable;
 
 			break;
 	}
