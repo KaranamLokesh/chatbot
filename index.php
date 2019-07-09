@@ -20,18 +20,7 @@ $variable = $result;
 
 	$json = json_decode($requestBody);
   //$period = "-period";
-  $perd = 'date-period';
-  $perdtime = 'date-time';
-  $name='given-name';
-  $text = $json->queryResult->parameters->text;
-  $queryText=$json->queryResult->queryText;
-  $endDate=$json->queryResult->parameters->$perd->endDate;
-  $startDate=$json->queryResult->parameters->$perd->startDate;
-  $endDatetime=$json->queryResult->parameters->$perdtime->endDate;
-  $startDatetime=$json->queryResult->parameters->$perdtime->startDate;
-  $date = $json->queryResult->parameters->$perdtime;
-  $outputaudio=$json->outputAudio;
-  $givenname=$json->queryResult->parameters->$name;
+  
 
 /* Execute the query. */  
 
@@ -39,7 +28,7 @@ switch ($date) {
 
 		case 'diwakar':
 
-			$speech = $variable;
+			$speech = "hello";
 		
 			break;
 
