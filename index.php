@@ -19,7 +19,10 @@
   $date = $json->queryResult->parameters->$perdtime;
   $outputaudio=$json->outputAudio;
   $givenname=$json->queryResult->parameters->$name;
-$url = "portal2.prospectatech.com/mobnum.php?name=$givenname"; 
+if($text == 'contact')
+	$url = "portal2.prospectatech.com/mobnum.php?name=$givenname";
+if($text == 'email')
+	$url = "portal2.prospectatech.com/email.php?name=$givenname";
   
 // Initialize a CURL session. 
 $ch = curl_init();  
